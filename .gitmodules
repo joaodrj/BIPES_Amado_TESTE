@@ -10,3 +10,11 @@ url = git@github.com:joaodrj/databoard.git
 [submodule "blockly"]
     path = blockly
     url = https://github.com/google/blockly.git
+
+[submodule "ui/bipes-micropython-unicorn"]
+    path = ui/bipes-micropython-unicorn
+    url = https://github.com/micropython/micropython-unicorn.git
+
+[submodule "webrepl"]
+    path = webrepl
+    url = https://github.com/webrepl/webrepl.git
