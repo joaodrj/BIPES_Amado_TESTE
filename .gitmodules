@@ -1,3 +1,7 @@
 [submodule "ui/freeboard"]
 	path = ui/freeboard
 	url = git@github.com:BIPES/freeboard.git
+
+[submodule "blockly"]
+    path = blockly
+    url = https://github.com/google/blockly.git
