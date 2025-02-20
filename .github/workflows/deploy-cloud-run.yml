@@ -15,14 +15,16 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
-          fetch-depth: 0
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}  # Adiciona token para acesso
 
-      - name: Verificar Submódulos
-        run: git submodule status
-
-      - name: Atualizar Submódulos Específicos
-        run: git submodule update --init --recursive ui/freeboard
+      - name: Configurar Git para HTTPS
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
+        
+      - name: Atualizar Submódulos
+        run: |
+          git submodule sync
+          git submodule update --init --recursive
 
       - name: Autenticação no GCP
         uses: google-github-actions/auth@v2
